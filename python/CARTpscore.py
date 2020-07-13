@@ -60,7 +60,7 @@ plt.show()
 ipw = x / treatment_prob + (1 - x) / (1 - treatment_prob)
 D = np.column_stack((np.ones(len(x)), x))
 geeid = np.array([i for i in range(len(x))])
-fam = sm.families.Binomial(link=sm.genmod.families.links.logit)
+fam = sm.families.Binomial(link=sm.genmod.families.links.logit())
 cov = sm.cov_struct.Independence()
 msm = sm.GEE(y, D, family=fam, weights=ipw, groups=geeid, cov_struct=cov)
 msmfit = msm.fit()
@@ -82,5 +82,3 @@ print(np.mean(predicted_outcome_all_untreated))
 print("Additive treatment effect")
 print(np.mean(predicted_outcome_all_treated -
               predicted_outcome_all_untreated)) 
-
- 
