@@ -15,6 +15,11 @@
 #### R/GLM_XGBOOSTtmle.R
 - eAppendix #4: R code that uses TMLE (targeted minimum loss estimation) to apply two different machine learning algorithms to estimate the causal effect of Digitalis on death in the Digitalis Investigator Group Trial
 
+#### julia/CARTpscore.jl
+- Bonus: Julia code that uses CART (classification and regression trees) to compute propensity scores for an inverse probability weighted estimate the causal effect of Digitalis on death in the Digitalis Investigator Group Trial
+
+
+
 #### data/digdata.csv
 - CSV (comma separated text file) containing data from the Digitalis Investigator Group Trial, as found in the R package `asympTest` v0.1.4
 
