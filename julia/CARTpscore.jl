@@ -50,7 +50,8 @@ function get_cvaccuracy(;minTrees = 1, maxTrees = 20, nrepeats=3, K=10)
                   depth,          # max depth
                   min_samples_leaf,
                   min_samples_split,
-                  min_purity_increase
+                  min_purity_increase,
+                  verbose=false
                 )
       res[j] += inv(nrepeats) * mean(foldaccuracy)
     end
@@ -84,7 +85,7 @@ pscore = probs[:,1];
 
 # plot the propensity scores (will just be peaks)
 density(pscore[cc.TRTMT .== 1], label="Treated");
-show(density!(pscore[cc.TRTMT .== 0], label="Unreated"))
+display(density!(pscore[cc.TRTMT .== 0], label="Unreated"))
 
 cc.weights = [x == 1 ? 1.0 / pscore[i] : 1.0 / (1.0 - pscore[i]) for (i,x) in enumerate(cc.TRTMT)];
 
