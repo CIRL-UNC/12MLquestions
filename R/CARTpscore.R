@@ -10,9 +10,10 @@
 # Released under the GNU General Public License: http://www.gnu.org/copyleft/gpl.html
 ######################################################################################################################
 
-#install.packages("caret")
-#install.packages("asympTest")
-# Main code
+# Run once if you don't have these packages installed already
+# install.packages("tmle", dependencies=T)
+# install.packages("asympTest", dependencies=T)
+
 library(caret)
 library(asympTest)
 set.seed(12345)
@@ -23,16 +24,12 @@ data(DIGdata)
 DIGdata$TRTMT_Dichotomous <- as.factor(DIGdata$TRTMT)
 complete_case <- DIGdata[!is.na(DIGdata$BMI),]
 
-# split data
-training_dataset <- DIGdata[1:3400,]
-test_dataset <- DIGdata[3401:6800,]
-
 # use ten-fold cross validation on the training dataset to pick parameters for a CART model.
 control <- trainControl(method="repeatedcv", number=10, repeats=3)
 cart_model <- train(TRTMT_Dichotomous~AGE+SEX+BMI, data=complete_case, method="rpart", metric="Accuracy", trControl=control)
 print(cart_model)
 
-# Comput propensity scores as probability of treatment (propensity scores)
+# Compute propensity scores as probability of treatment (propensity scores)
 treatment_prob <- predict(cart_model, complete_case, type="prob")
 
 # Not surprisingly for an RCT, treatment probabilities are decently balanced
@@ -52,7 +49,7 @@ all_treated$TRTMT <- 1
 all_untreated <- complete_case
 all_untreated$TRTMT <- 0
 
-# Estimtate outcomes if everyone were treated
+# Estimate outcomes if everyone were treated
 predicted_outcome_all_treated <- predict(outcome_model, all_treated, weights=IPW, type='response')
 mean(predicted_outcome_all_treated)
 predicted_outcome_all_untreated <- predict(outcome_model, all_untreated, weights=IPW, type='response')

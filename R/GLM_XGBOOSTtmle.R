@@ -10,9 +10,10 @@
 # Released under the GNU General Public License: http://www.gnu.org/copyleft/gpl.html
 ######################################################################################################################
 
-# Run once
-install.packages("tmle")
-install.packages("asympTest")
+# Run once if you don't have these packages already
+# install.packages("tmle", dependencies=T)
+# install.packages("asympTest", dependencies=T)
+# install.packages("xgboost", dependencies=T)
 
 # Main code
 # Load Libraries and dataset
