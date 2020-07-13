@@ -36,4 +36,9 @@ vignettes/*.pdf
 *.knit.md
 
 # R Environment Variables
-.Renviron
+*.Renviron
+
+*.txt
+*.DS_Store
+*.gitignore
+.gitignore
