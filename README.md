@@ -1,5 +1,5 @@
 ### Code to accompany the manuscript:
-#### Steve Mooney, Daniel Westreich, and Alexander Keil. 12 Questions About Using Machine Learning in Causal Research  (You Won’t Believe the Answer to Number 9!). Am J Epidemiol. 2020.
+#### Steve Mooney, Daniel Westreich, and Alexander Keil. 13 Questions About Using Machine Learning in Causal Research (You Won’t Believe the Answer to Number 10!). Am J Epidemiol. 2020.
 
 ### File descriptions:
 
