@@ -1,5 +1,5 @@
 ### Code to accompany the manuscript:
-#### Steve Mooney, Daniel Westreich, and Alexander Keil. 13 Questions About Using Machine Learning in Causal Research (You Won’t Believe the Answer to Number 10!). Am J Epidemiol. 2021. [Link](https://doi.org/10.1093/aje/kwab047)
+#### Steve Mooney, Alexander Keil, and Daniel Westreich. 13 Questions About Using Machine Learning in Causal Research (You Won’t Believe the Answer to Number 10!). Am J Epidemiol. 2021. [Link](https://doi.org/10.1093/aje/kwab047)
 
 ### File descriptions:
 
